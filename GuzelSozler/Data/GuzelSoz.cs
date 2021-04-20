@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuzelSozler.Areas.Admin.Data
+namespace GuzelSozler.Data
 {
     public class GuzelSoz
     {
         public int Id { get; set; }
         [Required]
         public string Soz { get; set; }
+
+        public List<KullaniciSoz> Begenenler { get; set; }
     }
 }

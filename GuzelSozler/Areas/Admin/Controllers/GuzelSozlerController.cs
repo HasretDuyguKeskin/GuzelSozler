@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GuzelSozler.Areas.Admin.Data;
 using GuzelSozler.Data;
-using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace GuzelSozler.Areas.Admin.Controllers
 {
@@ -18,7 +16,6 @@ namespace GuzelSozler.Areas.Admin.Controllers
         public GuzelSozlerController(ApplicationDbContext context)
         {
             _context = context;
-            ViewBag.GuzelSozler = "active";
         }
 
         // GET: Admin/GuzelSozler
@@ -151,11 +148,5 @@ namespace GuzelSozler.Areas.Admin.Controllers
         {
             return _context.GuzelSozler.Any(e => e.Id == id);
         }
-
-        //public override void OnActionExecuted(ActionExecutedContext context)
-        //{
-        //    ViewBag.GuzelSozler = "active";
-        //    base.OnActionExecuted(context);
-        //}
     }
 }
